@@ -16,15 +16,24 @@ using System.Windows.Shapes;
 namespace Alchemister
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
+        }
 
-            mainFrame.Navigate(new BrewingPage());
+        private static MainWindow GetParentWindow(DependencyObject obj)
+        {
+            while (obj != null)
+            {
+                var mainWindow = obj as MainWindow;
+                if (mainWindow != null) return mainWindow;
+                obj = VisualTreeHelper.GetParent(obj);
+            }
+            return null;
         }
     }
 }

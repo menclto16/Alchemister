@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace Alchemister
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro BrewingPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BrewingPage : Page
     {
-        public MainWindow()
+        public BrewingPage()
         {
             InitializeComponent();
-
-            mainFrame.Navigate(new BrewingPage());
         }
     }
 }
