@@ -16,15 +16,18 @@ using System.Windows.Shapes;
 namespace Alchemister
 {
     /// <summary>
-    /// Interakční logika pro MainWindow.xaml
+    /// Interakční logika pro ItemSlot.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ItemSlot : UserControl
     {
-        public MainWindow()
+        int NumberOfItems = 0;
+        public ItemSlot()
         {
             InitializeComponent();
 
-            mainFrame.Navigate(new BrewingPage());
+            if (NumberOfItems > 0)
+            {
+            }
         }
     }
 }

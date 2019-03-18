@@ -108,10 +108,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,9 +115,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainMenu.xaml.cs">
-      <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -154,86 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\plant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\thorn_hunter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\plant_demonic.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\thorn_lotus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\briar_patch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\oklob_plant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\eye_of_devastation_old.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\orb_of_ice.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Ingredients\orb_of_fire_new.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\Sprites\Potions\black_new.png" />
-    <Resource Include="Data\Sprites\Potions\black_old.png" />
-    <Resource Include="Data\Sprites\Potions\brilliant_blue_new.png" />
-    <Resource Include="Data\Sprites\Potions\brilliant_blue_old.png" />
-    <Resource Include="Data\Sprites\Potions\brown_new.png" />
-    <Resource Include="Data\Sprites\Potions\brown_old.png" />
-    <Resource Include="Data\Sprites\Potions\bubbly.png" />
-    <Resource Include="Data\Sprites\Potions\clear.png" />
-    <Resource Include="Data\Sprites\Potions\cloudy.png" />
-    <Resource Include="Data\Sprites\Potions\cyan_new.png" />
-    <Resource Include="Data\Sprites\Potions\cyan_old.png" />
-    <Resource Include="Data\Sprites\Potions\dark.png" />
-    <Resource Include="Data\Sprites\Potions\effervescent.png" />
-    <Resource Include="Data\Sprites\Potions\emerald.png" />
-    <Resource Include="Data\Sprites\Potions\fizzy.png" />
-    <Resource Include="Data\Sprites\Potions\golden.png" />
-    <Resource Include="Data\Sprites\Potions\magenta_new.png" />
-    <Resource Include="Data\Sprites\Potions\magenta_old.png" />
-    <Resource Include="Data\Sprites\Potions\murky.png" />
-    <Resource Include="Data\Sprites\Potions\orange_new.png" />
-    <Resource Include="Data\Sprites\Potions\orange_old.png" />
-    <Resource Include="Data\Sprites\Potions\pink.png" />
-    <Resource Include="Data\Sprites\Potions\potion_bubbly.png" />
-    <Resource Include="Data\Sprites\Potions\potion_cloudy.png" />
-    <Resource Include="Data\Sprites\Potions\potion_effervescent.png" />
-    <Resource Include="Data\Sprites\Potions\potion_fizzy.png" />
-    <Resource Include="Data\Sprites\Potions\potion_golden.png" />
-    <Resource Include="Data\Sprites\Potions\potion_murky.png" />
-    <Resource Include="Data\Sprites\Potions\potion_puce.png" />
-    <Resource Include="Data\Sprites\Potions\potion_purple_red.png" />
-    <Resource Include="Data\Sprites\Potions\potion_sky_blue.png" />
-    <Resource Include="Data\Sprites\Potions\puce.png" />
-    <Resource Include="Data\Sprites\Potions\purple_red.png" />
-    <Resource Include="Data\Sprites\Potions\ruby_new.png" />
-    <Resource Include="Data\Sprites\Potions\ruby_old.png" />
-    <Resource Include="Data\Sprites\Potions\silver.png" />
-    <Resource Include="Data\Sprites\Potions\sky_blue.png" />
-    <Resource Include="Data\Sprites\Potions\unknown.png" />
-    <Resource Include="Data\Sprites\Potions\white_new.png" />
-    <Resource Include="Data\Sprites\Potions\white_old.png" />
-    <Resource Include="Data\Sprites\Potions\yellow_new.png" />
-    <Resource Include="Data\Sprites\Potions\yellow_old.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Data\Sound\carnivalrides.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Resource Include="Data\Sprites\UI\cauldron.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

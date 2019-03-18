@@ -1,0 +1,66 @@
+﻿<Page x:Class="Alchemister.BrewingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      xmlns:local="clr-namespace:Alchemister"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="BrewingPage"
+      Background="MediumPurple">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#373737" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Padding="20">
+            <Canvas x:Name="myCanvas">
+                <Grid Width="{Binding ActualWidth, ElementName=myCanvas}" Height="{Binding ActualHeight, ElementName=myCanvas}">
+                    <Image gif:ImageBehavior.AnimatedSource="Data/Sprites/UI/cauldron.gif" Width="300" SnapsToDevicePixels="true" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                    <WrapPanel VerticalAlignment="Bottom">
+                        <Border Background="#373737">
+                            <Rectangle>
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="Data/Sprites/UI/cauldron.gif"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Border>
+                    </WrapPanel>
+                </Grid>
+            </Canvas>
+        </Border>
+        <Border Grid.Column="1" Padding="20">
+            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Border Background="#373737">
+                    <Rectangle>
+                    </Rectangle>
+                </Border>
+            </WrapPanel>
+        </Border>
+        <Button Grid.Row="1" Width="150" Height="40">Start Brewing</Button>
+        <Button Grid.Row="1" Grid.Column="1" Width="150" Height="40">Add</Button>
+    </Grid>
+</Page>
