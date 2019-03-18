@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,15 @@ namespace Alchemister
     /// </summary>
     public partial class MainWindow : Window
     {
+        SoundPlayer mediaPlayer = new SoundPlayer();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            mediaPlayer.SoundLocation = "Data/Sound/carnivalrides.wav";
+            mediaPlayer.Load();
+            mediaPlayer.PlayLooping();
         }
     }
 }
