@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Alchemister
 {
     /// <summary>
-    /// Interakční logika pro ItemSlot.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class ItemSlot : UserControl
+    public partial class MainMenu : Page
     {
-        int NumberOfItems = 0;
-        public ItemSlot()
+        public MainMenu()
         {
             InitializeComponent();
-
-            if (NumberOfItems > 0)
-            {
-            }
         }
     }
 }

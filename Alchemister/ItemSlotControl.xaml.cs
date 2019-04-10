@@ -16,16 +16,24 @@ using System.Windows.Shapes;
 namespace Alchemister
 {
     /// <summary>
-    /// Interakční logika pro BrewingPage.xaml
+    /// Interakční logika pro ItemSlot.xaml
     /// </summary>
-    public partial class BrewingPage : Page
+    public partial class ItemSlotControl : UserControl
     {
-        Inventory InventoryObject = new Inventory();
+        public ItemSlot ItemSlotObject = new ItemSlot();
 
-        public BrewingPage()
+        public ItemSlotControl()
         {
             InitializeComponent();
-            inventory.InventoryObject = InventoryObject;
+            RefreshItemSlot();
+        }
+
+        public void RefreshItemSlot() {
+        
+            if (ItemSlotObject.Count > 0)
+            {
+                ItemCountLabel.Visibility = Visibility.Visible;
+            }
         }
     }
 }

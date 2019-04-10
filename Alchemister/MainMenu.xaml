@@ -1,0 +1,41 @@
+﻿<Page x:Class="Alchemister.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Alchemister"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainMenu"
+      Background="#31004a">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#373737" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Padding="20">
+            <Image gif:ImageBehavior.AnimatedSource="Data/Sprites/UI/cauldron.gif" Width="300" SnapsToDevicePixels="true" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+        </Border>
+        <Border Grid.Column="1" Padding="20">
+            <StackPanel VerticalAlignment="Center">
+                <Button >New Game</Button>
+                <Button>Continue</Button>
+                <Button>Quit</Button>
+            </StackPanel>
+            
+        </Border>
+    </Grid>
+</Page>

@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Alchemister
+namespace Editor
 {
     /// <summary>
-    /// Interakční logika pro App.xaml
+    /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-        
         public App()
         {
-            Inventory inventory = new Inventory();
+            string path = System.IO.Directory.GetCurrentDirectory()+"\\Images";
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
         }
-    }
+    
+}
 }
