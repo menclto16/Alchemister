@@ -1,0 +1,58 @@
+﻿<Page x:Class="Editor.RecipeCreatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Editor"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="RecipeCreatePage">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ListBox x:Name="ItemList1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListBoxChanged1" Width="205">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <Label VerticalAlignment="Center" FontSize="45">+</Label>
+            <ListBox x:Name="ItemList2" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListBoxChanged2" Width="205">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <Label VerticalAlignment="Center" FontSize="45">=</Label>
+            <ListBox x:Name="ItemList3" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListBoxChanged3" Width="205">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="245">
+                <Label x:Name="ItemNameLabel1"></Label>
+                <Label x:Name="ItemLevelLabel1"></Label>
+                <Label x:Name="ItemIDLabel1"></Label>
+            </StackPanel>
+            <StackPanel Width="245">
+                <Label x:Name="ItemNameLabel2"></Label>
+                <Label x:Name="ItemLevelLabel2"></Label>
+                <Label x:Name="ItemIDLabel2"></Label>
+            </StackPanel>
+            <StackPanel Width="245">
+                <Label x:Name="ItemNameLabel3"></Label>
+                <Label x:Name="ItemLevelLabel3"></Label>
+                <Label x:Name="ItemIDLabel3"></Label>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <Button Click="Button_Click">Add Recipe</Button>
+        </StackPanel>
+    </StackPanel>
+</Page>

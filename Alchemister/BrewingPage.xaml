@@ -6,7 +6,7 @@
       xmlns:gif="http://wpfanimatedgif.codeplex.com"
       xmlns:local="clr-namespace:Alchemister"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1000"
+      d:DesignHeight="750" d:DesignWidth="1000"
       Title="BrewingPage"
       Background="#31004a">
 
@@ -30,6 +30,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -41,9 +42,9 @@
                 <Grid Width="{Binding ActualWidth, ElementName=myCanvas}" Height="{Binding ActualHeight, ElementName=myCanvas}">
                     <Image gif:ImageBehavior.AnimatedSource="Data/Sprites/UI/cauldron.gif" Width="300" SnapsToDevicePixels="true" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
                     <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                        <local:ItemSlotControl/>
-                        <local:ItemSlotControl/>
-                        <local:ItemSlotControl/>
+                        <local:ItemSlotControl x:Name="MaterialA"/>
+                        <Label Foreground="White" FontSize="40" Height="75">+</Label>
+                        <local:ItemSlotControl x:Name="MaterialB"/>
                     </WrapPanel>
                 </Grid>
             </Canvas>
@@ -51,7 +52,14 @@
         <Border Grid.Column="1" Padding="20">
             <local:InventoryControl x:Name="inventory"/>
         </Border>
-        <Button Grid.Row="1" Width="150" Height="40">Start Brewing</Button>
-        <Button Grid.Row="1" Grid.Column="1" Width="150" Height="40">Add</Button>
+        <Label Grid.Row="1" x:Name="Message" FontSize="25" HorizontalAlignment="Center"></Label>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="150" Height="40" Click="Button_Click1">Start Brewing</Button>
+            <Button Width="150" Height="40" Click="Button_Click2">Clear</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="150" Height="40" Click="Button_Click3">Add</Button>
+            <Button Width="150" Height="40" Click="Button_Click4">Use</Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Alchemister\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -58,6 +58,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ItemCreatePage.xaml.cs">
+      <DependentUpon>ItemCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeCreatePage.xaml.cs">
+      <DependentUpon>RecipeCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ItemCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,11 +76,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FileHandler.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RecipeCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -100,6 +113,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AlchemisterLib\AlchemisterLib.csproj">
+      <Project>{66ceb1bf-abae-41c7-bb42-5220753173b0}</Project>
+      <Name>AlchemisterLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Alchemister\Alchemister.csproj">
       <Project>{57f5370a-7a21-4081-9a51-15adb2a08797}</Project>
       <Name>Alchemister</Name>

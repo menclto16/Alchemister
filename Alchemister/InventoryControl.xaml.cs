@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AlchemisterLib;
 
 namespace Alchemister
 {
@@ -22,18 +23,23 @@ namespace Alchemister
     {
         public int NumOfSlots = 35;
         public Inventory InventoryObject = new Inventory();
+        public List<ItemSlotControl> ItemSlots = new List<ItemSlotControl>();
 
         public InventoryControl()
         {
             InitializeComponent();
+            RefreshInventory();
+        }
 
-            InventoryObject.ItemSlots[0].Item.ItemImageClass.ImagePath = "Data/Sprites/Ingredients/plant.png";
-
+        public void RefreshInventory()
+        {
+            ItemSlotsListbox.Items.Clear();
             for (int i = 0; i < NumOfSlots; i++)
             {
                 ItemSlotControl itemSlotControl = new ItemSlotControl();
-                itemSlotControl.ItemSlotObject = InventoryObject.ItemSlots[NumOfSlots - 1];
-                wrapPanel.Children.Add(itemSlotControl);
+                itemSlotControl.ItemSlotObject = InventoryObject.ItemSlots[i];
+                itemSlotControl.RefreshItemSlot();
+                ItemSlotsListbox.Items.Add(itemSlotControl);
             }
         }
     }

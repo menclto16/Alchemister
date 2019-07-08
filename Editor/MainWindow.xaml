@@ -5,18 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Editor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel Width="400">
-        <TextBox Text="Name" Width="200"></TextBox>
-        <TextBox Width="200"></TextBox>
-
-        <ListBox x:Name="ItemList" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
-        
+        Title="MainWindow" Height="450" Width="900">
+    <StackPanel>
+        <DockPanel LastChildFill="False" Margin="0,0,0,5">
+            <Button Width="200" Click="Navigate1">Create Item</Button>
+            <Button Width="200" Click="Navigate2">Create Recipe</Button>
+        </DockPanel>
+        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
     </StackPanel>
 </Window>

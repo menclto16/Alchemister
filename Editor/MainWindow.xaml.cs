@@ -20,25 +20,25 @@ namespace Editor
     /// </summary>
     public partial class MainWindow : Window
     {
-        FileHandler fileHandler = new FileHandler();
-
         public MainWindow()
         {
             InitializeComponent();
-            LoadImages();
+            mainFrame.Navigate(new ItemCreatePage());
         }
 
-        public void LoadImages()
+        private void Navigate1(object sender, RoutedEventArgs e)
         {
-            string[] images = fileHandler.GetImages();
-            foreach (var imagePath in images)
-            {
-                Image imageControl = new Image();
-                imageControl.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "/" + imagePath));
-                imageControl.Width = 40;
-                imageControl.Height = 40;
-                ItemList.Items.Add(imageControl);
-            }
+            mainFrame.Navigate(new ItemCreatePage());
+        }
+
+        private void Navigate2(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new RecipeCreatePage());
+        }
+
+        internal void Navigate(UserControl newPage)
+        {
+            throw new NotImplementedException();
         }
     }
 }

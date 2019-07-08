@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alchemister
+namespace AlchemisterLib
 {
-    class Antidote
+    abstract class AEffect
     {
+        int Value;
+
+        public abstract void TriggerEffect();
     }
 }

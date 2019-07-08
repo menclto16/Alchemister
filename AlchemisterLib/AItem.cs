@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alchemister
+namespace AlchemisterLib
 {
     public abstract class AItem
     {
-        string Name;
-        string Description;
-        int GoldValue;
-        int ItemLevel;
-        public ItemImage ItemImageClass = new ItemImage();
+        public string Name;
+        public string Description;
+        public int GoldValue;
+        public int ItemLevel;
+        public string ID;
 
         int Sell() {
             return GoldValue;

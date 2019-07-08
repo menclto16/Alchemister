@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Alchemister"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1000">
+        Title="MainWindow"
+        Height="800"
+        Width="1200"
+        Background="#31004a">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#373737" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+            <Label FontSize="30" Foreground="White" Margin="0,0,5,0">HP</Label>
+            <Grid>
+                <ProgressBar x:Name="HPBar" Width="200" Height="25" Background="#373737" Foreground="Red" BorderThickness="0"></ProgressBar>
+                <TextBlock Text="{Binding ElementName=HPBar, Path=Value, StringFormat={}{0:0}}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            
+            <Label FontSize="30" Foreground="White" Margin="50,0,5,0" Visibility="Hidden">MANA</Label>
+            <Grid Visibility="Hidden">
+                <ProgressBar x:Name="ManaBar" Width="200" Height="25" Background="#373737" Foreground="Blue" BorderThickness="0"></ProgressBar>
+                <TextBlock Text="{Binding ElementName=ManaBar, Path=Value, StringFormat={}{0:0}}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Width="200">
+            <Button Width="190" Click="Button_Click1">Brew Potions</Button>
+            <Button Width="190" Click="Button_Click2">Adventure</Button>
+            <Button Width="190" Click="Button_Click3">Shop</Button>
+        </StackPanel>
+        <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

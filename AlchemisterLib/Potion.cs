@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alchemister
+namespace AlchemisterLib
 {
-    class Tenacity
+    public class Potion : AItem
     {
+        List<AEffect> Effects;
     }
 }

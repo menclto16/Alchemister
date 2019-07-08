@@ -13,17 +13,20 @@
              Margin="5"
              Background="#373737">
     <Grid x:Name="ItemSlotGrid">
-        <Image x:Name="ItemImage" Source="{Binding ItemSlotObject.Item.ItemImageClass.ItemImagePath}" Margin="5" SnapsToDevicePixels="true" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+        <Image x:Name="ItemImage" Margin="5" SnapsToDevicePixels="true" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
         <Viewbox x:Name="ItemCountLabel" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Hidden">
             <Grid Width="20" Height="20">
                 <Ellipse Fill="Red"/>
-                <TextBlock x:Name="ItemCountText" Text="{Binding ItemSlotObject.Count}" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="ItemCountText" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </Viewbox>
         <Popup x:Name="InfoPopup" AllowsTransparency="True" Placement="Bottom" HorizontalOffset="0" VerticalOffset="2" PlacementTarget="{Binding ElementName=ItemSlotGrid}" IsOpen="{Binding ElementName=ItemImage, Path=IsMouseOver, Mode=OneWay}" PopupAnimation="Fade">
-            <Border Background="#00A86B" BorderBrush="Black" Panel.ZIndex="10" Padding="5" HorizontalAlignment="Left">
+            <Border Background="#373737" BorderBrush="White" BorderThickness="2" Panel.ZIndex="10" Padding="5" HorizontalAlignment="Left">
                 <StackPanel>
-                    <TextBlock Text="Vitality Plant" FontSize="20"/>
+                    <TextBlock x:Name="PopupItemRarity" FontSize="15"/>
+                    <TextBlock x:Name="PopupItemName" Foreground="White" FontSize="20"/>
+                    <TextBlock x:Name="PopupItemDescription" Foreground="White" FontSize="15"/>
+                    <TextBlock x:Name="PopupItemGoldValue" Foreground="White" FontSize="15"/>
                 </StackPanel>
             </Border>
         </Popup>

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alchemister
+namespace AlchemisterLib
 {
-    abstract class AEffect
+    public class Material : AItem
     {
-        int Value;
-
-        public abstract void TriggerEffect();
+        List<AEffect> Effects;
     }
 }
